@@ -10,6 +10,7 @@ myenv/
 
 # Distribution / packaging
 build/
+dist/
 *.egg-info/
 
 # PyInstaller
