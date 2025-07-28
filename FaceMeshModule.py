@@ -58,13 +58,15 @@ def main():
                     cv2.putText(frame, text, (280, 130), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 4)
 
                 cv2.imshow('img', frame)
-                cv2.waitKey(1)
+                if cv2.waitKey(1) & 0xFF == 27:
+                    break
             while time.time() < timeout_start + 10:
                 ret, frame = cap.read()
                 frame = cv2.flip(frame, 1)
                 cv2.putText(frame, text, (280, 130), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 4)
                 cv2.imshow('img', frame)
-                cv2.waitKey(1)
+                if cv2.waitKey(1) & 0xFF == 27:
+                    break
         # while time.time() < timeout_start + 15:
         #     ret, frame = cap.read()
         #     frame = cv2.flip(frame, 1)
@@ -134,7 +136,8 @@ def main():
         #     cv2.imshow('img', frame)
         #     cv2.waitKey(1)
 
-
+    cap.release()
+    cv2.destroyAllWindows()
 
 main()
 

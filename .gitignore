@@ -1,0 +1,32 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+myenv/
+
+# Distribution / packaging
+build/
+*.egg-info/
+
+# PyInstaller
+*.spec
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs (PyCharm)
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env

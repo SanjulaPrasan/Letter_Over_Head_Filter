@@ -29,7 +29,8 @@ with mp_face_mesh.FaceMesh(
             cv2.putText(frame, text, (280, 130), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 4)
 
         cv2.imshow('img', frame)
-        key = cv2.waitKey(1)
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
     while True:
         ret, frame = cap.read()
         frame = cv2.flip(frame, 1)
@@ -38,8 +39,11 @@ with mp_face_mesh.FaceMesh(
         results = face_mesh.process(rgb_frame)
         cv2.putText(frame, text, (280, 130), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 4)
         cv2.imshow('img', frame)
-        key = cv2.waitKey(1)
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
+
 cap.release()
+cv2.destroyAllWindows()
 
 
 
